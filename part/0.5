@@ -1,0 +1,11 @@
+graph TD;
+    A[User] --> B[Browser];
+    B --> C[Page: https://studies.cs.helsinki.fi/exampleapp/spa];
+    C --> D[SPA JavaScript Loaded];
+    D --> E[Render SPA Interface];
+    E --> F{User Interaction};
+    F -->|User Navigates| G[Update URL with Hash];
+    G --> H{Route Change};
+    H -->|Yes| I[Fetch Relevant Data];
+    I --> J[Update SPA Content];
+    H -->|No| F;
