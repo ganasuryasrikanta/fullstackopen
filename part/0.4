@@ -1,0 +1,15 @@
+graph TD;
+    A[User] --> B[Browser];
+    B --> C[Page: https://studies.cs.helsinki.fi/exampleapp/notes];
+    C --> D[Text Field];
+    D --> E[User Writes Note];
+    E --> F[Clicks Save Button];
+    F --> G{Validation Passes?};
+    G -->|Yes| H[Serialize Note];
+    H --> I[Send POST Request];
+    I --> J[Server: /new_note];
+    J --> K{Note Saved?};
+    K -->|Yes| L[Server Response: Status 201 Created];
+    L --> M[Refresh Notes];
+    K -->|No| N[Display Validation Error];
+    N --> D[Allow User to Edit Note];
