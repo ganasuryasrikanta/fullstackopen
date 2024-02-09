@@ -1,0 +1,17 @@
+graph TD;
+    A[User] --> B[Browser];
+    B --> C[Page: https://studies.cs.helsinki.fi/exampleapp/spa];
+    C --> D[SPA JavaScript Loaded];
+    D --> E[Render SPA Interface];
+    E --> F[User Enters Note];
+    F --> G[Clicks Save Button];
+    G --> H{Validation Passes?};
+    H -->|Yes| I[Serialize Note];
+    I --> J[Send POST Request];
+    J --> K[Server: /new_note];
+    K --> L[Server Response: Status 201 Created];
+    L --> M{Update SPA Content};
+    M -->|Yes| N[Refresh Notes];
+    N --> O[Display Confirmation];
+    M -->|No| P[Display Validation Error];
+    P --> F[Allow User to Edit Note];
